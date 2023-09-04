@@ -131,7 +131,7 @@ public class Node {
             case 3 -> goalThree(state, perms, initial.clone(), parent, move);
             //checks whether the cube is solved
             case 4 -> Arrays.equals(state.sides, new int[]{0x11111111, 0x22222222, 0x33333333, 0x44444444, 0x55555555, 0x66666666});
-            default -> false;
+            default -> return false;
         };
     }
 }
