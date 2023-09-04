@@ -16,6 +16,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 
 public class HelloApplication extends Application {
+
+    //used to generate a random scramble (currently not perfect -you can repeat opposite sided moves infinitely- but i can fix it in the future)
     static String[] randomScramble(){
         ArrayList<String> scramble = new ArrayList<>();
         String move = null;
@@ -44,6 +46,7 @@ public class HelloApplication extends Application {
             }
             try{
                 assert move != null;
+                //if move is not the same type of move (e.g. U move, R move etc.) as previous move add the move to scramble
                 if(!Objects.equals(move.charAt(0), scramble.get(scramble.size()-1).charAt(0))){
                 scramble.add(move);
             }} catch(Exception E) {scramble.add(move);}
@@ -51,6 +54,7 @@ public class HelloApplication extends Application {
         return scramble.toArray(new String[0]);
         }
 
+    //performs all the moves in the scramble and applies it to the cube
     static void performMoves(Cube cube,String[] moveSet) {
         for(String move:moveSet) {
             switch (move) {
@@ -80,6 +84,7 @@ public class HelloApplication extends Application {
         }
     }
 
+    //updates the GUI of the cube according to what side is chosen (sideIndex 0 - 5 where 0 is the top layer, 1 is the left layer etc.)
     static void updateGui(CubeGUI cubeGUI,int sideIndex, Cube cube,Color[] colours){
         //The easiest way to do this is just using a large switch statement which manually updates each side based on the new state of the cube
         //since this function isn't called when updating the GUI it doesn't need to be super quick
@@ -415,10 +420,11 @@ public class HelloApplication extends Application {
         cube.displayCube();
         updateFull(cubeGUI,cube,colours);
         performMoves(simplified,scramble);
-        Thistle thistle = new Thistle(cube,perms, simplified, cubeGUI, colours, duration);
-        //thistle is operated in a separate thread as this means that you can run the GUI in the background without it pausing
+        //Here you can uncomment which AI you want to use. In the future this will be done via a menu but it works for now
+        //Thistle thistle = new Thistle(cube,perms, simplified, cubeGUI, colours, duration);
+        //thistle and beginner are operated in a separate thread as this means that you can run the GUI in the background without it pausing
         //thistle.start();
-        Beginners beginner = new Beginners(cube,cubeGUI,colours, duration);
+        //Beginners beginner = new Beginners(cube,cubeGUI,colours, duration);
         //beginner.start();
     }
 
