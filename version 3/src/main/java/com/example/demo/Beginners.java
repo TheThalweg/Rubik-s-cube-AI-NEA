@@ -284,13 +284,6 @@ public class Beginners extends Thread{
     static String yellowCross(Cube cube, String sequence){
         //if not solved
         while((cube.sides[0]&0x0F0F0F0F)!=0x01010101){
-            System.out.println("test");
-            //if not in one of the three cases keep making U moves until it is
-            /*while((cube.sides[0]&0x0F0F0F0F)!=0&&(cube.sides[0]&0x0F0F0F0F)!=0x01000001&&(cube.sides[0]&0x0F0F0F0F)!=0x00010001){
-                System.out.println(Long.toHexString(cube.sides[0]&0x0F0F0F0F));
-                sequence = performMoves(cube,"U",sequence,2);
-            }*/
-            //checks for dot case
             for(int i=1;i<8;i+=2){
                 //if any edges are yellow check whether it is a line or a corner. If neither perform a U move
                 if(cube.getColour(0,i)==1){
