@@ -22,14 +22,6 @@ public class Beginners extends Thread{
         this.duration = duration;
     }
 
-    static void performMove(Cube cube, int[] move){
-        switch (move[1]) {
-            case 1 -> cube.clockwise(move[0]);
-            case 3 -> cube.antiClockwise(move[0]);
-            case 2 -> cube.doubleTwist(move[0]);
-        }
-    }
-
     static String moveShift(String move, int shift){
         StringBuilder moveBuilder = new StringBuilder(move);
         char[] faceOrder = {'L','F','R','B'};
