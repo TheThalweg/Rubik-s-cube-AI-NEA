@@ -8,3 +8,5 @@ and solve it using either a decision tree
 implementation of the Thistlethwaite algorithm
 (≈32 moves) and a beginner methods implementation
 (≈ 100 moves).
+
+Version 4 includes an updated program that includes a CFOP AI along with a more efficient beginners method
