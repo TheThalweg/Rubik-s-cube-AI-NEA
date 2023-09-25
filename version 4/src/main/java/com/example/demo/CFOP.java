@@ -99,7 +99,7 @@ public class CFOP extends AICommon implements Runnable {
             entry((short) 0b10001001010, "R U2 R2 U' R U' R' U2 F R F'"),
             entry((short) 0b100011010, "L F L' U R U' R' U R U' R' L F' L'"),
             entry((short) 0b101110110000, "R U R' U' L R' F R F' L'"),
-            entry((short) 0b111111110000, "") //This is the solved state so now algorithm needs to be performed
+            entry((short) 0b111111110000, "") //This is the solved state so no algorithm needs to be performed
     );
     public CFOP(Cube cube, CubeGUI cubeGUI, Color[] colours, float duration) {
         super(cube, cubeGUI, colours, duration);
