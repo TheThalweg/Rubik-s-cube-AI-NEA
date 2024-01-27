@@ -6,8 +6,6 @@ import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.concurrent.BrokenBarrierException;
-import java.util.concurrent.CyclicBarrier;
 
 /*
 Class for the Thistlethwaite algorithm AI. Works by moving cube into consecutive stages of which the AI can solve the cube with fewer moves.
@@ -19,7 +17,6 @@ public class Thistle implements Runnable{
     Cube simplified;
     HashSet<Long> perms;
     Color[] colours;
-    String[] solutionContainer;
 
     CubeController cubeController;
     Label moveDisplay;
