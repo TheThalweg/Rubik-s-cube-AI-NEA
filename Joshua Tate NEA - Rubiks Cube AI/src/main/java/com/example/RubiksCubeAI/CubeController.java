@@ -437,7 +437,7 @@ public class CubeController implements Initializable {
     }
 
     // Handles keybindings. Allows users to make moves not necessarily dictated by the solution.
-    public void handlePress(KeyEvent e) throws BrokenBarrierException, InterruptedException {
+    public void handlePress(KeyEvent e) throws InterruptedException {
             switch (e.getCode()) {
                 // Creates event handlers for keyboard inputs. When shift is being held the boolean variable prime is set to true.
                 // This allows for anti-clockwise moves to be performed.
