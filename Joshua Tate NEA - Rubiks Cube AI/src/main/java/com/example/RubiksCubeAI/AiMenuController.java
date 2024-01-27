@@ -14,7 +14,6 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.Objects;
-import java.util.concurrent.BrokenBarrierException;
 
 
 public class AiMenuController{
@@ -72,7 +71,7 @@ public class AiMenuController{
                 Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1), f -> inputBlocked = false));
                 timeline.play();
                 }
-            } catch (BrokenBarrierException | InterruptedException ex) {
+            } catch (InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
         });
@@ -104,7 +103,7 @@ public class AiMenuController{
                     Timeline timeline = new Timeline(new KeyFrame(Duration.millis(1), f -> inputBlocked = false));
                     timeline.play();
                 }
-            } catch (BrokenBarrierException | InterruptedException ex) {
+            } catch (InterruptedException ex) {
                 throw new RuntimeException(ex);
             }
         });
